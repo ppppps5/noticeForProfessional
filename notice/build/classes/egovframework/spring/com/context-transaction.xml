@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<!-- 제니엘 모바일 -->
+	<bean id="txManagerZenielM" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceZenielM"/>
+	</bean>
+	  
+	<tx:advice id="txAdviceZenielM" transaction-manager="txManagerZenielM">
+	   <tx:attributes>	 
+	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	   <tx:method name="hourSche" propagation="NEVER" no-rollback-for="Exception"/>
+	   </tx:attributes>
+	</tx:advice>
+    
+	<aop:config>
+		<aop:pointcut id="requiredTxZenielM" expression="execution(* egovframework..*Service.*(..))"/>
+		<aop:advisor advice-ref="txAdviceZenielM" pointcut-ref="requiredTxZenielM" />
+	</aop:config>
+	
+	<!-- REXERP_ZENIEL -->
+	<bean id="txManagerRexerpZeniel" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceRexerpZeniel"/>
+	</bean>
+	  
+	<tx:advice id="txAdviceRexerpZeniel" transaction-manager="txManagerRexerpZeniel">
+	   <tx:attributes>	 
+	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	   </tx:attributes>
+	</tx:advice>
+    
+	<aop:config>
+		<aop:pointcut id="requiredTxRexerpZeniel" expression="execution(* egovframework..*Service.*(..))"/>
+		<aop:advisor advice-ref="txAdviceRexerpZeniel" pointcut-ref="requiredTxRexerpZeniel" />
+	</aop:config>
+	
+	<!-- ERP_C -->
+	<!-- <bean id="txManagerErpC" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceErpC"/>
+	</bean>
+	  
+	<tx:advice id="txAdviceErpC" transaction-manager="txManagerErpC">
+	   <tx:attributes>	 
+	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	   </tx:attributes>
+	</tx:advice>
+    
+	<aop:config>
+		<aop:pointcut id="requiredTxErpC" expression="execution(* egovframework..*Service.*(..))"/>
+		<aop:advisor advice-ref="txAdviceErpC" pointcut-ref="requiredTxErpC" />
+	</aop:config> -->
+	
+	<!-- ERP_F -->
+	<!-- <bean id="txManagerErpF" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceErpF"/>
+	</bean>
+	  
+	<tx:advice id="txAdviceErpF" transaction-manager="txManagerErpF">
+	   <tx:attributes>	 
+	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	   </tx:attributes>
+	</tx:advice>
+    
+	<aop:config>
+		<aop:pointcut id="requiredTxErpF" expression="execution(* egovframework..*Service.*(..))"/>
+		<aop:advisor advice-ref="txAdviceErpF" pointcut-ref="requiredTxErpF" />
+	</aop:config> -->
+	
+	<!-- ERP_H -->
+	<bean id="txManagerErpH" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceErpH"/>
+	</bean>
+	  
+	<tx:advice id="txAdviceErpH" transaction-manager="txManagerErpH">
+	   <tx:attributes>	 
+	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	   </tx:attributes>
+	</tx:advice>
+    
+	<aop:config>
+		<aop:pointcut id="requiredTxErpH" expression="execution(* egovframework..*Service.*(..))"/>
+		<aop:advisor advice-ref="txAdviceErpH" pointcut-ref="requiredTxErpH" />
+	</aop:config>
+
+	<!-- SMS -->
+	
+	<bean id="txManagerSms" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceSms"/>
+	</bean>
+	  
+	<tx:advice id="txAdviceSms" transaction-manager="txManagerSms">
+	   <tx:attributes>	 
+	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	   </tx:attributes>
+	</tx:advice>
+    
+	<aop:config>
+		<aop:pointcut id="requiredTxSms" expression="execution(* egovframework..*Service.*(..))"/>
+		<aop:advisor advice-ref="txAdviceSms" pointcut-ref="requiredTxSms" />
+	</aop:config>
+	
+	
+	<!-- JOBWORKS -->
+
+<!-- 	<bean id="txManagerJobworks" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> -->
+<!-- 		<property name="dataSource" ref="dataSourceJobworks"/> -->
+<!-- 	</bean> -->
+	  
+<!-- 	<tx:advice id="txAdviceJobworks" transaction-manager="txManagerJobworks"> -->
+<!-- 	   <tx:attributes>	  -->
+<!-- 	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/> -->
+<!-- 	   </tx:attributes> -->
+<!-- 	</tx:advice> -->
+    
+<!-- 	<aop:config> -->
+<!-- 		<aop:pointcut id="requiredTxJobworks" expression="execution(* egovframework..*Service.*(..))"/> -->
+<!-- 		<aop:advisor advice-ref="txAdviceJobworks" pointcut-ref="requiredTxJobworks" /> -->
+<!-- 	</aop:config> -->
+	 
+	<!-- INTRANET -->
+	<bean id="txManagerIntranet" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceIntranet"/>
+	</bean>
+	  
+	<tx:advice id="txAdviceIntranet" transaction-manager="txManagerIntranet">
+	   <tx:attributes>	 
+	   <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	   </tx:attributes>
+	</tx:advice>
+    
+	<aop:config>
+		<aop:pointcut id="requiredTxIntranet" expression="execution(* egovframework..*Service.*(..))"/>
+		<aop:advisor advice-ref="txAdviceIntranet" pointcut-ref="requiredTxIntranet" />
+	</aop:config>
+	
+</beans>

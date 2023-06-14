@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:task="http://www.springframework.org/schema/task"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+							http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+							http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- 공통 스케줄러 설정 ex) @Scheduled(cron = "0 0/10 * * * *")  -->
+	<task:scheduler id="zemosScheduler"    pool-size="10" />
+	<task:executor  id="zemosTaskExecutor" pool-size="10" />
+	<!-- <task:executor  id="zemosTaskExecutor" pool-size="10" queue-capacity="10"/> -->
+	<task:annotation-driven executor="zemosTaskExecutor" scheduler="zemosScheduler" />
+
+</beans>

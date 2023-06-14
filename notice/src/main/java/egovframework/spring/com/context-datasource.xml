@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="egov.propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/egovframework/egovProps/globals.properties</value>
+                <!-- value>file:/product/jeus/egovProps/globals.properties</value-->
+            </list>
+        </property>
+    </bean>
+	
+	<!-- Zemos -->
+	<bean id="dataSourceZemos" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<!-- 접속 -->
+		<property name="driverClassName" value="${DB.Zemos.DriverClassName}" />
+		<property name="url" value="${DB.Zemos.Url}" />
+		<property name="username" value="${DB.Zemos.UserName}" />
+		<property name="password" value="${DB.Zemos.Password}" />
+		<!-- 설정 -->
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />
+		<property name="validationQuery" value="/* Zemos */ ${DB.com.validationQuery}" />
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+	</bean>
+	
+	<!-- 제니엘 모바일 -->
+	<bean id="dataSourceZenielM" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <!-- 접속 -->
+		<property name="driverClassName" value="${DB.ZenielM.DriverClassName}"/>
+		<property name="url" value="${DB.ZenielM.Url}" />
+		<property name="username" value="${DB.ZenielM.UserName}"/>
+		<property name="password" value="${DB.ZenielM.Password}"/>
+		<!-- 설정 -->
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />
+		<property name="validationQuery" value="/* ZenielM */ ${DB.com.validationQuery}" />
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+	</bean>
+	
+	<!-- REXERP_ZENIEL -->
+	<bean id="dataSourceRexerpZeniel" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- 접속 -->
+		<property name="driverClassName" value="${DB.RexerpZeniel.DriverClassName}"/>
+		<property name="url" value="${DB.RexerpZeniel.Url}" />
+		<property name="username" value="${DB.RexerpZeniel.UserName}"/>
+		<property name="password" value="${DB.RexerpZeniel.Password}"/>
+		<!-- 설정 -->
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />
+		<property name="validationQuery" value="/* REXERP_ZENIEL */ ${DB.com.validationQuery}" />
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+	</bean>
+	
+	<!-- ERP_C -->
+	<!-- <bean id="dataSourceErpC" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		접속
+		<property name="driverClassName" value="${DB.ErpC.DriverClassName}"/>
+		<property name="url" value="${DB.ErpC.Url}" />
+		<property name="username" value="${DB.ErpC.UserName}"/>
+		<property name="password" value="${DB.ErpC.Password}"/>
+		설정
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />
+		<property name="validationQuery" value="/* ERP_C */ ${DB.com.validationQuery}" />
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+	</bean> -->
+	
+	<!-- ERP_F -->
+	<!-- <bean id="dataSourceErpF" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		접속
+		<property name="driverClassName" value="${DB.ErpF.DriverClassName}"/>
+		<property name="url" value="${DB.ErpF.Url}" />
+		<property name="username" value="${DB.ErpF.UserName}"/>
+		<property name="password" value="${DB.ErpF.Password}"/>
+		설정
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />
+		<property name="validationQuery" value="/* ERP_F */ ${DB.com.validationQuery}" />
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+	</bean> -->
+	
+	<!-- ERP_H -->
+	<bean id="dataSourceErpH" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- 접속--> 
+		<property name="driverClassName" value="${DB.ErpH.DriverClassName}"/>
+		<property name="url" value="${DB.ErpH.Url}" />
+		<property name="username" value="${DB.ErpH.UserName}"/>
+		<property name="password" value="${DB.ErpH.Password}"/>
+		<!-- 설정 -->
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />
+		<property name="validationQuery" value="/* ERP_H */ ${DB.com.validationQuery}" />
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+	</bean>
+
+
+	
+	
+	<!-- JOBWORKS -->
+<!-- 	<bean id="dataSourceJobworks" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> -->
+		<!-- 접속 -->
+<!-- 		<property name="driverClassName" value="${DB.Jobworks.DriverClassName}"/> -->
+<!-- 		<property name="url" value="${DB.Jobworks.Url}" /> -->
+<!-- 		<property name="username" value="${DB.Jobworks.UserName}"/> -->
+<!-- 		<property name="password" value="${DB.Jobworks.Password}"/> -->
+		<!-- 설정 -->
+<!-- 		<property name="initialSize" value="${DB.com.initialSize}" /> -->
+<!-- 		<property name="maxActive" value="${DB.com.maxActive}" /> -->
+<!-- 		<property name="maxWait" value="${DB.com.maxWait}" /> -->
+<!-- 		<property name="maxIdle" value="${DB.com.maxIdle}" /> -->
+<!-- 		<property name="minIdle" value="${DB.com.minIdle}" /> -->
+<!-- 		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" /> -->
+<!-- 		<property name="testOnReturn" value="${DB.com.testOnReturn}" /> -->
+<!-- 		<property name="validationQuery" value="/* JOBWORKS */ ${DB.com.validationQuery}" /> -->
+<!-- 		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" /> -->
+<!-- 		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" /> -->
+<!-- 		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" /> -->
+<!-- 		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" /> -->
+<!-- 		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" /> -->
+<!-- 		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" /> -->
+<!-- 		<property name="logAbandoned" value="${DB.com.logAbandoned}" /> -->
+<!-- 	</bean> -->
+	
+	<!-- INTRANET -->
+	<bean id="dataSourceIntranet" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- 접속 -->
+		<property name="driverClassName" value="${DB.Intranet.DriverClassName}"/>
+		<property name="url" value="${DB.Intranet.Url}" />
+		<property name="username" value="${DB.Intranet.UserName}"/>
+		<property name="password" value="${DB.Intranet.Password}"/>
+		<!-- 설정 -->
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />
+		<property name="validationQuery" value="/* INTRANET */ ${DB.com.validationQuery}" />
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+	</bean>
+	
+	<!-- SMS -->
+	 <bean id="dataSourceSms" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!--접속 -->
+		<property name="driverClassName" value="${DB.Sms.DriverClassName}"/>
+		<property name="url" value="${DB.Sms.Url}" />
+		<property name="username" value="${DB.Sms.UserName}"/>
+		<property name="password" value="${DB.Sms.Password}"/>
+		<!-- 설정 
+		<property name="initialSize" value="${DB.com.initialSize}" />
+		<property name="maxActive" value="${DB.com.maxActive}" />
+		<property name="maxWait" value="${DB.com.maxWait}" />
+		<property name="maxIdle" value="${DB.com.maxIdle}" />
+		<property name="minIdle" value="${DB.com.minIdle}" />
+		<property name="testOnBorrow" value="${DB.com.testOnBorrow}" />
+		<property name="testOnReturn" value="${DB.com.testOnReturn}" />		
+		<property name="validationQuery" value="/* SMS */ ${DB.com.validationQuery}" />		
+		<property name="testWhileIdle" value="${DB.com.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${DB.com.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${DB.com.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun" value="${DB.com.numTestsPerEvictionRun}" />
+		<property name="removeAbandonedTimeout" value="${DB.com.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${DB.com.removeAbandoned}" />
+		<property name="logAbandoned" value="${DB.com.logAbandoned}" />
+		-->
+	</bean> 
+	
+	<!-- DataSource -->
+	<!-- <alias name="dataSource-${Globals.DbType}" alias="egov.dataSource" />
+	<alias name="dataSource-${Globals.DbType}" alias="dataSource" /> -->
+	
+</beans>

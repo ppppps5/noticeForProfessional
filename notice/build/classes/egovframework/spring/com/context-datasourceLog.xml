@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+    <!-- 제니엘 모바일 개발용 LOG FORMATTER -->
+	<bean id="dataSourceZenielMLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dataSourceZenielM" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <property name="sqlPrefix" value="SQL : "/>
+            </bean>
+        </property>
+    </bean>
+	
+	<!-- REXERP_ZENIEL 개발용 LOG FORMATTER -->
+	<bean id="dataSourceRexerpZenielLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dataSourceRexerpZeniel" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <property name="sqlPrefix" value="SQL : "/>
+            </bean>
+        </property>
+    </bean>
+    
+	<!-- ERP_H 개발용 LOG FORMATTER -->
+	<bean id="dataSourceErpHLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dataSourceErpH" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <property name="sqlPrefix" value="SQL : "/>
+            </bean>
+        </property>
+    </bean>
+    
+	<!-- SMS 개발용 LOG FORMATTER -->
+	<bean id="dataSourceSmsLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dataSourceSms" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <property name="sqlPrefix" value="SQL : "/>
+            </bean>
+        </property>
+    </bean>
+    
+	<!-- JOBWORKS 개발용 LOG FORMATTER -->
+<!-- 	<bean id="dataSourceJobworksLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource"> -->
+<!--         <constructor-arg ref="dataSourceJobworks" /> -->
+<!--         <property name="logFormatter"> -->
+<!--             <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter"> -->
+<!--                 <property name="loggingType" value="MULTI_LINE" /> -->
+<!--                 <property name="sqlPrefix" value="SQL : "/> -->
+<!--             </bean> -->
+<!--         </property> -->
+<!--     </bean> -->
+    
+	<!-- INTRANET 개발용 LOG FORMATTER -->
+	<bean id="dataSourceIntranetLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dataSourceIntranet" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <property name="sqlPrefix" value="SQL : "/>
+            </bean>
+        </property>
+    </bean>
+	
+</beans>

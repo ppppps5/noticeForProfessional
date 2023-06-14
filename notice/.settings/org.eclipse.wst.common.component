@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="notice">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes/" source-path="/src/main/ImportedClasses"/>
+        <dependent-module archiveName="poi-ooxml-schemas-3.16.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/poi-ooxml-schemas-3.16/poi-ooxml-schemas-3.16">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-contrib-3.7-beta3.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/poi-contrib-3.7-beta3/poi-contrib-3.7-beta3">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-ooxml-3.16.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/poi-ooxml-3.16/poi-ooxml-3.16">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-3.16.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/poi-3.16/poi-3.16">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="notice"/>
+        <property name="java-output-path" value="/notice/build/classes"/>
+    </wb-module>
+</project-modules>

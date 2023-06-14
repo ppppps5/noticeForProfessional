@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+    <!-- 제니엘 모바일 -->
+    <bean id="sqlSessionZenielM" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceZenielM" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/zenielm/**/*.xml" />
+	</bean>
+	
+    <!-- REXERP_ZENIEL -->
+	<bean id="sqlSessionRexerpZeniel" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceRexerpZeniel" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/rexerpzeniel/**/*.xml" />
+	</bean>
+    
+	<!-- ERP_C -->
+	<!-- <bean id="sqlSessionErpC" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceErpC" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/erpc/**/*.xml" />
+	</bean> -->
+	
+	<!-- ERP_F -->
+	<!-- <bean id="sqlSessionErpF" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceErpF" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/erpf/**/*.xml" />
+	</bean> -->
+	
+	<!-- ERP_H -->
+	<bean id="sqlSessionErpH" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceErpH" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/erph/**/*.xml" />
+	</bean>
+
+	<!-- SMS -->	
+	<bean id="sqlSessionSms" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceSms" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/sms/**/*.xml" />
+	</bean>
+	
+	
+	<!-- JOBWORKS -->
+
+<!-- 	<bean id="sqlSessionJobworks" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="dataSourceJobworks" /> -->
+<!-- 		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" /> -->
+<!-- 		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/jobworks/**/*.xml" /> -->
+<!-- 	</bean> -->
+
+	 
+	<!-- INTRANET -->
+	<bean id="sqlSessionIntranet" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceIntranet" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/intranet/**/*.xml" />
+	</bean>
+
+	<!-- MapperConfigurer setup for MyBatis Database Layer with @Mapper("deptMapper") in DeptMapper Interface -->
+ 	<bean class="egovframework.rte.psl.dataaccess.mapper.MapperConfigurer">
+		<property name="basePackage" value="egovframework.com.cmm.service.impl" />
+	</bean>
+	
+	<!-- ZEMOS -->
+	<bean id="sqlSessionZemos" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSourceZemos" />
+	<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-mapper-config.xml" />
+	<property name="mapperLocations" value="classpath:/egovframework/sqlmap/zenielm/zemos3/**/*.xml" />
+	</bean>
+	
+    
+</beans>
